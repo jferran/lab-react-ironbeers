@@ -21,7 +21,6 @@ function SingleBeer({beer, id}) {
         } catch (error) {
             
         }
-
     }
     if(fetching) return (<div>...Loading</div>)
     
@@ -40,6 +39,9 @@ function SingleBeer({beer, id}) {
       <img src={image_url} alt="" height="200px" />
       <h2>{name}</h2>
       <h3>{tagline}</h3>
+      <h3>{first_brewed}</h3>
+      <h3>{attenuation_level}</h3>
+      <h3>{description}</h3>
       <h4>
         <b>Created by: </b>
         {contributed_by}
