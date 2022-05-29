@@ -38,20 +38,24 @@ function AllBeers() {
   return (
     <div>
         <Navbar/><br/>
-        <h1>All Beers</h1>
         <label htmlFor='search'>Search:</label><br/>
         <input type='text' name='search' onChange={handleSearch} value={search}/>
         {
             beerList.map((beer) => {
                 return (
-                    
-                    <li key={beer._id}>
-                        <img src={beer.image_url} alt='' height='200px'/>
-                        <h2>{beer.name}</h2>
-                        <h3>{beer.tagline}</h3>
-                        <h4><b>Created by:</b>{beer.contributed_by}</h4>
-                        <Link key={beer._id} to={`/beers/${beer._id}`} state={{beer: beer}}>GO</Link>
-                    </li>
+                    <Link key={beer._id} to={`/beers/${beer._id}`} state={{beer: beer}}>
+                        <div className='row text-start' >
+                            <div className='col'>
+                                <img src={beer.image_url} alt='' height='200px'/>
+                            </div>
+                            <div className='col-9'>
+                                <h2>{beer.name}</h2>
+                                <h3>{beer.tagline}</h3>
+                                <h5><b>Created by: </b>{beer.contributed_by}</h5>
+                                
+                            </div>
+                        </div>
+                    </Link>
                     )
                 })
         }
