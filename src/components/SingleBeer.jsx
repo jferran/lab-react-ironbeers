@@ -1,14 +1,12 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
-import { useLocation, useParams } from "react-router-dom";
-import Navbar from "./Navbar";
 
 function SingleBeer({beer, id}) {
     const [foundBeer, setFoundBeer] = useState(null)
     const [fetching, setFetching] = useState(true)
     useEffect(()=>{
         getBeer()
-    },[])
+    })
     const getBeer = async () => {
         try {
             if(!beer) {

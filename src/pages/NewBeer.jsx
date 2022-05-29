@@ -27,7 +27,7 @@ function NewBeer() {
         e.preventDefault()
         try {
             const beer = state;
-            const response = await axios.post('https://ih-beers-api2.herokuapp.com/beers/new', beer)
+            await axios.post('https://ih-beers-api2.herokuapp.com/beers/new', beer)
             navigate('/beers')
         } catch (error) {
             navigate('/beers')

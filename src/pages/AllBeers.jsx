@@ -11,20 +11,30 @@ function AllBeers() {
     useEffect(()=>{
         fetchBeerList();
     }, [])
+    
     const fetchBeerList = async () => {
         try {
             const response = await axios.get('https://ih-beers-api2.herokuapp.com/beers')
-            console.log(response)
             setBeerList(response.data)
             setFetching(false);
         } catch (error) {
             console.log("Error", error)
         }
     }
-    if(fetching) return (<div>...Loading</div>)
-    const handleSearch = (event) =>{
+    
+    const handleSearch = async (event) =>{
         setSearch(event.target.value)
+        //setFetching(true)
+        try {
+            const query=search;
+            const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${query}`)
+            setBeerList(response.data)
+            //setFetching(false)
+        } catch (error) {
+            //console.log("ERROR", error)
+        }
     }
+    if(fetching) return (<div>...Loading</div>)
   return (
     <div>
         <Navbar/><br/>
@@ -32,8 +42,7 @@ function AllBeers() {
         <label htmlFor='search'>Search:</label><br/>
         <input type='text' name='search' onChange={handleSearch} value={search}/>
         {
-            beerList.filter((beer) => {return beer.name.toUpperCase().includes(search.toUpperCase())})
-            .map((beer) => {
+            beerList.map((beer) => {
                 return (
                     
                     <li key={beer._id}>
