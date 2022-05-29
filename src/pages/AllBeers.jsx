@@ -22,14 +22,18 @@ function AllBeers() {
         }
     }
     if(fetching) return (<div>...Loading</div>)
+    const handleSearch = (event) =>{
+        setSearch(event.target.value)
+    }
   return (
     <div>
         <Navbar/><br/>
         <h1>All Beers</h1>
         <label htmlFor='search'>Search:</label><br/>
-        <input type='text' name='search' value={search}/>
+        <input type='text' name='search' onChange={handleSearch} value={search}/>
         {
-            beerList.map((beer) => {
+            beerList.filter((beer) => {return beer.name.toUpperCase().includes(search.toUpperCase())})
+            .map((beer) => {
                 return (
                     
                     <li key={beer._id}>

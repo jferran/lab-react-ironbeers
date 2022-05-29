@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, {useState} from 'react'
 import Navbar from '../components/Navbar'
+import {useNavigate} from "react-router-dom"
 
 function NewBeer() {
+    const navigate = useNavigate()
     const [state, setState] = useState({
         name: '',
         tagline: '',
@@ -26,8 +28,9 @@ function NewBeer() {
         try {
             const beer = state;
             const response = await axios.post('https://ih-beers-api2.herokuapp.com/beers/new', beer)
+            navigate('/beers')
         } catch (error) {
-            
+            navigate('/beers')
         }
     }
 
