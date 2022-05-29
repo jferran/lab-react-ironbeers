@@ -4,9 +4,7 @@ import { NavLink } from 'react-router-dom'
 function Navbar() {
   return (
     <div>
-        <NavLink to="/">Home</NavLink> {' | '}
-        <NavLink to="/random-beer">Random Beer</NavLink> {' | '}
-        <NavLink to="/new-beer">New Beer</NavLink>
+        <NavLink to="/">Home</NavLink>
     </div>
   )
 }
