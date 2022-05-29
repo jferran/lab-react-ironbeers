@@ -1,6 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, {useEffect, useState} from "react";
+import { useLocation, useParams } from "react-router-dom";
+import Navbar from "./Navbar";
 
-function SingleBeer({ beer }) {
+function SingleBeer({beer, id}) {
+    const [foundBeer, setFoundBeer] = useState(null)
+    const [fetching, setFetching] = useState(true)
+    useEffect(()=>{
+        getBeer()
+    },[])
+    const getBeer = async () => {
+        try {
+            if(!beer) {
+                const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
+                setFoundBeer(response.data)
+            }
+            else setFoundBeer(beer)
+            setFetching(false)
+
+        } catch (error) {
+            
+        }
+
+    }
+    if(fetching) return (<div>...Loading</div>)
+    
   const {
     image_url,
     name,
@@ -9,10 +33,10 @@ function SingleBeer({ beer }) {
     attenuation_level,
     description,
     contributed_by,
-  } = beer;
+  } = foundBeer;
+  console.log(beer)
   return (
     <div>
-      SingleBeer
       <img src={image_url} alt="" height="200px" />
       <h2>{name}</h2>
       <h3>{tagline}</h3>

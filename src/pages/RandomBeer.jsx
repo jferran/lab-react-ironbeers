@@ -11,7 +11,7 @@ function RandomBeer() {
     },[])
     const getBeer = async () =>{
         const response = await axios.get('https://ih-beers-api2.herokuapp.com/beers/random')
-        console.log(response)
+        //console.log(response)
         setBeer(response.data)
         setFetching(false)
 
