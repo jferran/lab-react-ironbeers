@@ -7,9 +7,10 @@ import RandomBeer from './pages/RandomBeer';
 import AllBeers from './pages/AllBeers';
 import Beer from './pages/Beer';
 
+
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/beers" element={<AllBeers/>} />

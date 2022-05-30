@@ -68,7 +68,7 @@ function NewBeer() {
                 <label className="form-label" htmlFor='contributed_by'>Contributed by</label>
                 <input className="form-control" type='text' name='contributed_by' onChange={handleChange} value={state.contributed_by}/><br/>
             </div>
-                <button onClick={handleSubmit}>Add</button>
+                <button className="btn btn-primary" onClick={handleSubmit}>Add</button>
         </form>
     </div>
   )

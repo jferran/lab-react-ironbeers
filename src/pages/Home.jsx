@@ -7,10 +7,10 @@ import randomBeer from '../assets/random-beer.png';
 
 function Home() {
   return (
-    <div>
-        <h1>Home</h1><br/>
-        <NavLink to="/beers">
-        <div className="card" style={{width: '18rem'}}>
+    <div className='card-group justify-content-center'>
+
+        <NavLink className='mb-3' to="/beers">
+        <div className="card col-12">
             <img src={beers} className="card-img-top" alt="..."/>
             <div className="card-body text-start">
                 <h5 className="card-title">All beers</h5>
@@ -19,8 +19,8 @@ function Home() {
         </div>
         </NavLink>
 
-        <NavLink to="/random-beer">
-        <div className="card" style={{width: '18rem'}}>
+        <NavLink className='mb-3' to="/random-beer">
+        <div className="card col-12 mb-3" >
             <img src={newBeer} className="card-img-top" alt="..."/>
             <div className="card-body text-start">
                 <h5 className="card-title">Random beer</h5>
@@ -29,8 +29,8 @@ function Home() {
         </div>
         </NavLink>
 
-        <NavLink to="/new-beer">
-        <div className="card" style={{width: '18rem'}}>
+        <NavLink className='mb-3' to="/new-beer">
+        <div className="card">
             <img src={randomBeer} className="card-img-top" alt="..."/>
             <div className="card-body text-start">
                 <h5 className="card-title">New beer</h5>

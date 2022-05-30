@@ -43,7 +43,7 @@ function AllBeers() {
         {
             beerList.map((beer) => {
                 return (
-                    <Link key={beer._id} to={`/beers/${beer._id}`} state={{beer: beer}}>
+                    <Link key={beer._id} to={`/beers/${beer._id}`} state={{beer: beer}} >
                         <div className='row text-start' >
                             <div className='col'>
                                 <img src={beer.image_url} alt='' height='200px'/>
