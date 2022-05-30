@@ -14,7 +14,9 @@ function Beer() {
       return (
         <div>
           <Navbar/><br/>
-          <SingleBeer beer={beer} id={id}/>
+          <div className='container'>
+            <SingleBeer beer={beer} id={id}/>
+          </div>
         </div>
       );
 }

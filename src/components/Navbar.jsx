@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 function Navbar() {
   return (
     <div>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-dark bg-primary">
           <div class="container justify-content-center">
             <NavLink to="/">🏠</NavLink>
           </div>

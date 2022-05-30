@@ -21,8 +21,9 @@ function RandomBeer() {
     <div>
         <Navbar/><br/>
         <h1>Random Beer</h1>
-        <SingleBeer beer={beer}/>
-
+        <div className='container'>
+          <SingleBeer beer={beer}/>
+        </div>
     </div>
   )
 }

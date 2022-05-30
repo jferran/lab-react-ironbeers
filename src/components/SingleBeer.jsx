@@ -33,14 +33,20 @@ function SingleBeer({beer, id}) {
   } = foundBeer;
   console.log(beer)
   return (
-    <div>
-      <img src={image_url} alt="" height="200px" />
-      <h2>{name}</h2>
-      <h3>{tagline}</h3>
-      <h3>{first_brewed}</h3>
-      <h3>{attenuation_level}</h3>
+    <div className="text-start">
+      <img src={image_url} alt="" height="200px" className="mx-auto d-block"/>
+      <div className="row">
+        <div className="col-9">
+          <h2>{name}</h2>
+          <h3 className='fw-light'>{tagline}</h3>
+        </div>
+        <div className="col-3 text-end">          
+          <h3 className='fw-light'>{attenuation_level}</h3>
+          <h3>{first_brewed}</h3>
+        </div>
+      </div>
       <h3>{description}</h3>
-      <h4>
+      <h4 className='fw-light'>
         <b>Created by: </b>
         {contributed_by}
       </h4>

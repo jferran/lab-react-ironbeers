@@ -38,6 +38,7 @@ function NewBeer() {
     <div>
         
         <Navbar/><br/>
+        <div className='container'>
         <h1>New Beer</h1>
         <form className='text-start'>
             <div className='mb-3'>
@@ -70,6 +71,7 @@ function NewBeer() {
             </div>
                 <button className="btn btn-primary" onClick={handleSubmit}>Add</button>
         </form>
+        </div>
     </div>
   )
 }
